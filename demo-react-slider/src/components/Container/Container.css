@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #25222A;
+    color: #fff;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.container .container__header {
+    margin: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
