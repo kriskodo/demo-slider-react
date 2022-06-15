@@ -5,6 +5,7 @@
     background: #25222A;
     color: #fff;
     cursor: pointer;
+    display:inline-block;
 }
 
 .button + .button {

@@ -5,9 +5,8 @@
     flex-direction: column;
     background-color: #25222A;
     color: #fff;
-    width: 95%;
-    margin: 0 auto 5px auto;
     padding: 20px;
+    height: 80%;
 }
 
 .container .container__header {

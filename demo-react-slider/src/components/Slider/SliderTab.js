@@ -5,6 +5,9 @@ import { SliderTabFooter } from './SliderTabFooter';
 import SliderCard from './SliderCard';
 
 const SliderTab = (props) => {
+	const cardSizes = [90, 95, 100, 100, 95, 90];
+	let counter = 0;
+
 	return (
 		<div className={props.className ?? "slider__tab"}>
 			<SliderTabContent className="slider__tab-content">
@@ -13,10 +16,18 @@ const SliderTab = (props) => {
 						key={i}
 						image={cardInfo?.image}
 						title={cardInfo?.title}
-						titleStyle={{fontSize: "16px"}}
+						titleStyle={{ fontSize: cardSizes[counter] === 100 ? "28px" : "24px" }}
 						content={cardInfo?.content}
-						contentStyle={{fontSize: "12px"}}
+						contentStyle={{ fontSize: cardSizes[counter] === 100 ? "18px" : "14px" }}
 						action={cardInfo?.action}
+						style={
+							{
+								background: "red",
+								height: cardSizes[counter] + "%",
+								width: cardSizes[counter++] + "%",
+								padding: cardInfo?.image ? "0" : "40px 0",
+							}
+						}
 					/>
 				))}
 			</SliderTabContent>

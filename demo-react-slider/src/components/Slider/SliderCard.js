@@ -4,10 +4,12 @@ import { Button } from '../Button/Button';
 
 const SliderCard = (props) => {
 	return (
-		<div className="slider__card">
+		<div className="slider__card" style={props.style}>
 			{props?.image && (
 				<div className="slider__card-img">
-					<img src={props?.image} alt="image" />
+					<img src={props?.image} alt="slider-card-img" style={{
+						borderBottomLeftRadius: props?.title ? "30px" : "0"
+					}}/>
 				</div>
 			)}
 

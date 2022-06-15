@@ -5,3 +5,9 @@
   margin: 0;
   padding: 0;
 }
+
+#root, .App, html, body {
+  height: 100%;
+  width: 1720px;
+  margin:  0 auto;
+}
