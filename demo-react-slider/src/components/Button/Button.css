@@ -1,17 +1,44 @@
 .button {
+    display:flex;
     padding: 12px 30px;
     border: none;
     border-radius: 5px;
-    background: #25222A;
-    color: #fff;
+    background: #59F0BD;
+    color: #222;
     cursor: pointer;
-    display:inline-block;
+    font-weight: bold;
+    transition: background .3s ease-in-out;
+    position: relative;
 }
 
 .button + .button {
     margin-left: 20px;
 }
 
-.button .button--active {
-    background-color:rgb(141, 63, 141);
+.button.button--active {
+    background: rgb(141, 63, 141);
+}
+
+.button.button--black {
+    background: #25222A;
+    color: #fff;
+}
+
+.button.button--big {
+    padding: 19px 50px;
+}
+
+.button .button__numberText {
+    pointer-events: none;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    border-radius: 100%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: #2F2A32;
 }

@@ -22,7 +22,8 @@ const SliderTab = (props) => {
 						action={cardInfo?.action}
 						style={
 							{
-								background: "red",
+							  opacity: cardSizes[counter] === 100 ? "1" : "0.6",
+								background: cardSizes[counter] === 100 ? "#25222A" : "#56545A",
 								height: cardSizes[counter] + "%",
 								width: cardSizes[counter++] + "%",
 								padding: cardInfo?.image ? "0" : "40px 0",
@@ -33,11 +34,11 @@ const SliderTab = (props) => {
 			</SliderTabContent>
 
 			<SliderTabFooter className="slider__tab-footer">
-				<Button text="Hot Takes" />
-				<Button text="$Juice Token" />
-				<Button text="Smart Chart" />
-				<Button text="Wiki" />
-				<Button text="Alpha Suite" />
+				<Button text="Hot Takes" className="button--black button--big" backgroundColor="#25222A" numberText="1"/>
+				<Button text="$Juice Token" className="button--black button--big" backgroundColor="#25222A" numberText="2" />
+				<Button text="Smart Chart" className="button--black button--big" backgroundColor="#25222A" numberText="3" />
+				<Button text="Wiki" className="button--black button--big" backgroundColor="#25222A" numberText="4" />
+				<Button text="Alpha Suite" className="button--black button--big" backgroundColor="#25222A" numberText="5" />
 			</SliderTabFooter>
 		</div>
 	);
