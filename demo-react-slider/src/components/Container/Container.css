@@ -6,11 +6,12 @@
     background-color: #25222A;
     color: #fff;
     width: 95%;
-    margin: 0 auto;
+    margin: 0 auto 5px auto;
+    padding: 20px;
 }
 
 .container .container__header {
-    margin: 20px;
+    margin-bottom: 10px;
     font-size: 24px;
     font-weight: 600;
 }

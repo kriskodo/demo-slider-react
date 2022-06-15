@@ -1,0 +1,16 @@
+.button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    background: #25222A;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button + .button {
+    margin-left: 20px;
+}
+
+.button .button--active {
+    background-color:rgb(141, 63, 141);
+}

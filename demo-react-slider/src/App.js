@@ -2,7 +2,7 @@ import './App.css';
 import Slider from "./components/Slider/Slider";
 import Container from "./components/Container/Container";
 
-function App() {
+const App = (props) => {
   return (
     <div className="App">
       <Container title="Just getting started">
