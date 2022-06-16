@@ -22,7 +22,7 @@ const SliderTab = (props) => {
 												actions = {cardInfo?.actions}
 												style = {
 														{
-																opacity: cardSizes[counter] === 100 ? "1" : cardSizes[counter] === 95 ? "0.6" : "0.4",
+																opacity: cardSizes[counter] === 100 ? "1" : cardSizes[counter] === 95 ? "0.4" : "0.2",
 																background: cardSizes[counter] === 100 ? "#25222A" : "#56545A",
 																height: cardSizes[counter] + "%",
 																width: cardSizes[counter++] + "%",
@@ -39,42 +39,42 @@ const SliderTab = (props) => {
 										className = "button--black button--big"
 										backgroundColor = {props.activeSlideId === 1 ? "#722FDE" : "#25222A"}
 										numberText = "1"
-										action = {() => props.setActiveSlideId(1)}
+										action = {() => props.setActiveSlideId(1, 3)}
 								/>
 								<Button
 										text = "$Juice Token"
 										className = "button--black button--big"
 										backgroundColor = {props.activeSlideId === 2 ? "#722FDE" : "#25222A"}
 										numberText = "2"
-										action = {() => props.setActiveSlideId(2)}
+										action = {() => props.setActiveSlideId(2, 4)}
 								/>
 								<Button
 										text = "Smart Chart"
 										className = "button--black button--big"
 										backgroundColor = {props.activeSlideId === 3 ? "#722FDE" : "#25222A"}
 										numberText = "3"
-										action = {() => props.setActiveSlideId(3)}
+										action = {() => props.setActiveSlideId(3, 5)}
 								/>
 								<Button
 										text = "Sixth Element"
 										className = "button--black button--big"
 										backgroundColor = {props.activeSlideId === 6 ? "#722FDE" : "#25222A"}
 										numberText = "4"
-										action = {() => props.setActiveSlideId(6)}
+										action = {() => props.setActiveSlideId(6, 6)}
 								/>
 								<Button
 										text = "Alpha Suite"
 										className = "button--black button--big"
 										backgroundColor = {props.activeSlideId === 5 ? "#722FDE" : "#25222A"}
 										numberText = "5"
-										action = {() => props.setActiveSlideId(5)}
+										action = {() => props.setActiveSlideId(5, 1)}
 								/>
 								<Button
 										text = "Wiki"
 										className = "button--black button--big"
 										backgroundColor = {props.activeSlideId === 4 ? "#722FDE" : "#25222A"}
 										numberText = "6"
-										action = {() => props.setActiveSlideId(4)}
+										action = {() => props.setActiveSlideId(4, 2)}
 								/>
 						</SliderTabFooter>
 				</div>

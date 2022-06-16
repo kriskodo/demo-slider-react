@@ -7,7 +7,7 @@
     color: #222;
     cursor: pointer;
     font-weight: bold;
-    transition: background .3s ease-in-out;
+    transition: all .1s ease-in;
     position: relative;
 }
 
