@@ -11,12 +11,12 @@
     position: relative;
 }
 
-.button + .button {
-    margin-left: 20px;
+.button:hover {
+    background-color: #722FDE;
 }
 
-.button.button--active {
-    background: rgb(141, 63, 141);
+.button + .button {
+    margin-left: 20px;
 }
 
 .button.button--black {

@@ -38,9 +38,9 @@ const SliderCard = (props) => {
 								</div>
 						)}
 						
-						{props?.action && (
+						{props?.actions?.length > 0 && (
 								<div className = "slider__card-action">
-										{props.action?.map((button, i) => (
+										{props.actions.map((button, i) => (
 												<Button
 														key = {i}
 														text = {button.text}
