@@ -21,20 +21,16 @@ const sliderContentConfig = [
 				title: "Hot Takes",
 				content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 				actions: [{ text: "Go to Hot Takes" }],
+				image: require("../../images/photo.jpg"),
 		},
 		{
 				sliderId: 4,
-				title: "Juice token",
 				image: require("../../images/photo.jpg"),
+				title: "Juice Token"
 		},
 		{
 				sliderId: 5,
-				title: "Smart Chart",
-				image: require("../../images/photo.jpg"),
-		},
-		{
-				sliderId: 6,
-				title: "sixth element",
+				title: "Smart Chat",
 				content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 		},
 ];
@@ -54,8 +50,6 @@ const Slider = () => {
 				reordered[2] = currentSlide;
 				
 				setExampleContent([...reordered]);
-				console.log("index of element: " + currentSlideIndex);
-				console.log("slideId: " + currentSlide.sliderId + " " + currentSlide.title);
 		};
 		
 		return (
