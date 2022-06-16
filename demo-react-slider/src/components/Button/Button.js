@@ -10,8 +10,8 @@ export const Button = (props) => {
 								<button
 										className = {props.className + " button"}
 										onClick = {props.action}
-										style={{backgroundColor: props.backgroundColor}}
-										onMouseEnter={(e) => changeBackground(e, "#722FDE")}
+										style={{...props.style, backgroundColor: props.backgroundColor}}
+										onMouseEnter={(e) => changeBackground(e, props.accentColor)}
 										onMouseLeave={(e) => changeBackground(e, props.backgroundColor)}
 								>
 										{props?.numberText && (

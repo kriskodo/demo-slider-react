@@ -3,7 +3,6 @@
     padding: 12px 30px;
     border: none;
     border-radius: 5px;
-    background: #59F0BD;
     color: #222;
     cursor: pointer;
     font-weight: bold;
@@ -12,7 +11,7 @@
 }
 
 .button:hover {
-    background-color: #722FDE;
+    filter: brightness(85%);
 }
 
 .button + .button {
