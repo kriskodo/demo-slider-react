@@ -1,0 +1,43 @@
+.button {
+    display:flex;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    color: #222;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .1s ease-in;
+    position: relative;
+}
+
+.button:hover {
+    filter: brightness(85%);
+}
+
+.button + .button {
+    margin-left: 20px;
+}
+
+.button.button--black {
+    background: #25222A;
+    color: #fff;
+}
+
+.button.button--big {
+    padding: 19px 50px;
+}
+
+.button .button__numberText {
+    pointer-events: none;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    border-radius: 100%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: #2F2A32;
+}
