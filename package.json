@@ -19,6 +19,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://kriskodo.github.io/demo-slider-react/",
   "eslintConfig": {
     "extends": [
       "react-app",
