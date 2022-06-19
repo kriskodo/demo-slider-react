@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../Button/Button';
+import { useRef } from 'react';
 
 const SliderCard = (props) => {
 	const shouldFlexRow = props?.isMainCard && props?.content && props?.image;
@@ -8,6 +9,7 @@ const SliderCard = (props) => {
 		<div
 			className="slider__card"
 			style={{ ...props.style, flexDirection: shouldFlexRow ? "row-reverse" : "column" }}
+			ref={props.reference}
 		>
 			{props?.image && (
 				<div

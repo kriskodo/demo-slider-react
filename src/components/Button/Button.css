@@ -6,7 +6,6 @@
     color: #222;
     cursor: pointer;
     font-weight: bold;
-    transition: all .1s ease-in;
     position: relative;
 }
 

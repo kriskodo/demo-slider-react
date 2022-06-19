@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import "./Slider.css";
 import SliderCard from "./SliderCard";
 import { Button } from "../Button/Button";
@@ -23,31 +23,78 @@ const Slider = (
 	const [content, setContent] = useState([...sliderContentData ?? []]);
 	const [activeCardIdx, setActiveCardId] = useState(1);
 
-	const middleCard = Math.floor(sliderContentData?.length / 2);
 	const cardSizes = sliderCardSizesConfig;
 	let counterCurrentCard = 0;
 
-	const setActiveCardSlider = (activeId, slideId) => {
-		setActiveCardId(activeId);
-		let reordered = [...content];
-		const currentCard = reordered.find(c => c.cardId === slideId);
-		const currentCardIndex = reordered.findIndex(c => currentCard.cardId === c.cardId);
+	// const setActiveCardSlider = (activeId, slideId) => {
+		
+	// };
 
-		reordered[currentCardIndex] = reordered[middleCard];
-		reordered[middleCard] = currentCard;
+	const moveForward = () => {
+		content.forEach((card, i, arr) => {
+			if(i === Math.floor(arr.length / 2)) {
+				card.ref.current.classList.add("slider__card-shrink")
+			}
+			if(i === Math.floor(arr.length / 2) + 1) {
+				card.ref.current.classList.add("slider__card-grow");
+			}
+			card.ref.current.classList.add("slider__arrow-moving-forward");
+		})
 
-		setContent([...reordered]);
-	};
+		setTimeout(() => {
+			content.forEach((card,i,arr) => {
+				if(i === Math.floor(arr.length / 2)) {
+					card.ref.current.classList.remove("slider__card-shrink")
+				}
+				if(i === Math.floor(arr.length / 2) + 1) {
+					card.ref.current.classList.remove("slider__card-grow");
+				}
+
+				card.ref.current.classList.remove("slider__arrow-moving-forward");
+			})
+
+			setContent([...content.slice(1), content[0]]);
+		}, 150)
+	}
+
+	const moveBackwards = () => {
+		content.forEach((card, i, arr) => {
+			if(i === Math.floor(arr.length / 2)) {
+				card.ref.current.classList.add("slider__card-shrink")
+			}
+			if(i === Math.floor(arr.length / 2) - 1) {
+				card.ref.current.classList.add("slider__card-grow");
+			}
+			card.ref.current.classList.add("slider__arrow-moving-backwards");
+		})
+
+		setTimeout(() => {
+			content.forEach((card,i,arr) => {
+				if(i === Math.floor(arr.length / 2)) {
+					card.ref.current.classList.remove("slider__card-shrink")
+				}
+				if(i === Math.floor(arr.length / 2) - 1) {
+					card.ref.current.classList.remove("slider__card-grow");
+				}
+
+				card.ref.current.classList.remove("slider__arrow-moving-backwa");
+			})
+
+			setContent([content[content.length - 1], ...content.slice(0, content.length - 1)]);
+		}, 150)
+	}
 
 	return (
 		<div className="slider">
 			<div className="slider__wrapper">
+			<Button className="slider__arrow-back" text={"<"} action={() => moveBackwards()}/>
 				<div className="slider__wrapper-content" style={{ ...wrapperContentStyles }}>
 					{content.map((cardInfo, i) => {
 						const isMainCardFlag = i === Math.floor(cardSizes.length / 2);
 						return (
 							<SliderCard
 								key={i}
+								reference={cardInfo.ref}
 								image={cardInfo?.image}
 								title={cardInfo?.title}
 								titleStyle={
@@ -98,6 +145,7 @@ const Slider = (
 						);
 					})}
 				</div>
+				<Button className="slider__arrow-front" text={">"} action={() => moveForward()}/>
 
 				<div className={"slider__wrapper-footer"} style={{ actionsStyles }}>
 					{sliderFooterActionButtons.map((button, i) => (
@@ -108,7 +156,7 @@ const Slider = (
 							className={button.className}
 							backgroundColor={activeCardIdx === button.relatesToIndex ? sliderStyles.accentButtonColor  : sliderStyles.primaryButtonColor}
 							numberText={button.relatesToIndex}
-							action={() => setActiveCardSlider(button.relatesToIndex, button.relatesToCardId)}
+							// action={() => setActiveCardSlider(button.relatesToIndex, button.relatesToCardId)}
 						/>
 					))}
 				</div>

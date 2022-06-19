@@ -1,3 +1,4 @@
+import React, { createRef, useRef } from 'react';
 import './App.css';
 import Slider from "./components/Slider/Slider";
 
@@ -17,12 +18,14 @@ const App = () => {
 	const sliderContentData = [
 		{
 			cardId: 1,
+			ref: useRef(null),
 			title: "Alpha Suite",
 			content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 			actions: [{ text: "Go to Alpha Suite" }],
 		},
 		{
 			cardId: 2,
+			ref:useRef(null),
 			image: require("./images/photo.jpg"),
 			title: "Wiki",
 			content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -30,6 +33,7 @@ const App = () => {
 		},
 		{
 			cardId: 3,
+			ref: useRef(null),
 			title: "Hot Takes",
 			content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 			actions: [{ text: "Go to Hot Takes" }],
@@ -37,10 +41,12 @@ const App = () => {
 		},
 		{
 			cardId: 4,
+			ref: useRef(null),
 			image: require("./images/photo.jpg"),
 		},
 		{
 			cardId: 5,
+			ref: useRef(null),
 			title: "Smart Chat",
 			content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 		}
